@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,500&family=Sen:wght@400;700;800&family=Spinnaker&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>NEECA</title>
+    <link rel="stylesheet" href="./Styles/index.css">
+</head>
+<body>
+     <!-- --------- mobile Navbar starts from here ------------- -->
+     <div class="md:hidden fixed bg-white w-full h-[81px] absolute flex justify-between items-center z-50 shadow-xl">
+        <div class="ml-2">
+            <img class="w-[70px] h-[70px]" src="./Pictures/img.NoPath - Copy-3 (1).png">
+        </div>
+        <div  onclick="toggleMenu()" class="mr-5">
+            <svg width="41" height="27" viewBox="0 0 41 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="2.5" y1="2.5" x2="37.8333" y2="2.5" stroke="#F76300" stroke-width="5"
+                    stroke-linecap="round" />
+                <line x1="2.5" y1="13.5" x2="37.8333" y2="13.5" stroke="#F76300" stroke-width="5"
+                    stroke-linecap="round" />
+                <line x1="2.5" y1="24.5" x2="37.8333" y2="24.5" stroke="#F76300" stroke-width="5"
+                    stroke-linecap="round" />
+            </svg>
+        </div>
+    </div>
+    <!-- --------- mobile Navbar ends here ------------- -->
+
+    <!-- --------- desktop Navbar starts from here ------------- -->
+    <div class="hidden md:flex justify-between lg:pl-[70px] lg:pr-[80px] fixed bg-white w-full h-[81px] absolute flex justify-between items-center z-50 shadow-xl">
+        <!-- <div> -->
+        <div class="ml-2 w-[20%]">
+            <img class="w-[70px] h-[70px]" src="./Pictures/img.NoPath - Copy-3 (1).png">
+        </div>
+        <div class="mr-5 w-[70%] lg:w-[60%] xl:w-[50%]">
+            <ul id="myMenu"
+                class="w-[100%] flex justify-between font-[poppins] font-normal md:text-[16px] lg:text-[18px] xl:text-[20px] md:leading-[42px]">
+                <li class="item active cursor-pointer">Home</li>
+                <li class="item cursor-pointer">About Us</li>
+                <li class="item cursor-pointer">News</li>
+                <li class="item cursor-pointer">Search Products</li>
+                <li class="item cursor-pointer">
+                    <a href="#">
+                    <button onclick="myPopUp()"
+                        class="flex justify-center items-center rounded-full w-[130px] h-[35px] bg-[#F76300] text-white">
+                        Get Started
+                    </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- </div> -->
+    </div>
+
+    <!-- --------- desktop Navbar ends here ------------- -->
+
+
+    <!-- ------- Toggle menu ---------- -->
+    <div id="toggle" class="hidden z-50 absolute w-[306px] h-[586px] bg-white right-0 top-[80px]">
+        <div class="mt-[48px] ml-[35px]">
+            <ul class="font-[poppins] font-normal text-[28px] leading-[42px]">
+                <li>Home</li>
+                <li class="mt-[22px]">About Us</li>
+                <li class="mt-[22px]">News</li>
+                <li class="mt-[22px]">Search Products</li>
+            </ul>
+        </div>
+        <div class="mt-[100px] mb-[75px] flex justify-center">
+            <Button
+                class="w-[228px] h-[55px] bg-[#F76300] text-white flex justify-center font-[poppins] font-normal text-[32px] leading-[48px] rounded-lg" type="button" data-modal-toggle="popup-modal">
+                Get Started
+            </Button>
+        </div>
+    </div>
+    <!-- ------- Toggle menu ends ---------- -->
+
+    <scripts src="./Scripts/search-products.js"></scripts>
+</body>
+</html>

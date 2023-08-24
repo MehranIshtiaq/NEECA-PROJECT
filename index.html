@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,500&family=Sen:wght@400;700;800&family=Spinnaker&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>NEECA</title>
+    <link rel="stylesheet" href="./Styles/index.css">
+</head>
+
+<body>
+    <!-- --------- mobile Navbar starts from here ------------- -->
+    <div class="md:hidden fixed bg-white w-full h-[81px] absolute flex justify-between items-center z-50">
+        <div class="ml-2">
+            <img class="w-[70px] h-[70px]" src="./Pictures/img.NoPath - Copy-3 (1).png">
+        </div>
+        <div onclick="toggleMenu()" class="mr-5">
+            <svg width="41" height="27" viewBox="0 0 41 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="2.5" y1="2.5" x2="37.8333" y2="2.5" stroke="#F76300" stroke-width="5"
+                    stroke-linecap="round" />
+                <line x1="2.5" y1="13.5" x2="37.8333" y2="13.5" stroke="#F76300" stroke-width="5"
+                    stroke-linecap="round" />
+                <line x1="2.5" y1="24.5" x2="37.8333" y2="24.5" stroke="#F76300" stroke-width="5"
+                    stroke-linecap="round" />
+            </svg>
+        </div>
+    </div>
+    <!-- --------- mobile Navbar ends here ------------- -->
+
+    <!-- --------- desktop Navbar starts from here ------------- -->
+    <div class="hidden md:flex justify-between lg:pl-[70px] lg:pr-[80px] fixed bg-white w-full h-[81px] absolute flex justify-between items-center z-50">
+        <!-- <div> -->
+        <div class="ml-2 w-[20%]">
+            <img class="w-[70px] h-[70px]" src="./Pictures/img.NoPath - Copy-3 (1).png">
+        </div>
+        <div class="mr-5 w-[70%] lg:w-[60%] xl:w-[50%]">
+            <ul id="myMenu"
+                class="w-[100%] flex justify-between font-[poppins] font-normal md:text-[16px] lg:text-[18px] xl:text-[20px] md:leading-[42px]">
+                <li class="item active cursor-pointer">Home</li>
+                <li class="item cursor-pointer">About Us</li>
+                <li class="item cursor-pointer">News</li>
+                <li class="item cursor-pointer">Search Products</li>
+                <li class="item cursor-pointer">
+                    <a href="#">
+                    <button onclick="myPopUp()"
+                        class="flex justify-center items-center rounded-full w-[130px] h-[35px] bg-[#F76300] text-white">
+                        Get Started
+                    </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- </div> -->
+    </div>
+
+    <!-- --------- desktop Navbar ends here ------------- -->
+
+
+    <!-- ------- Toggle menu ---------- -->
+    <div id="toggle" class="hidden z-50 absolute w-[306px] h-[586px] bg-white right-0 top-[80px]">
+        <div class="mt-[48px] ml-[35px]">
+            <ul class="font-[poppins] font-normal text-[28px] leading-[42px]">
+                <li>Home</li>
+                <li class="mt-[22px]">About Us</li>
+                <li class="mt-[22px]">News</li>
+                <li class="mt-[22px]">Search Products</li>
+            </ul>
+        </div>
+        <div class="mt-[100px] mb-[75px] flex justify-center">
+            <Button
+                class="w-[228px] h-[55px] bg-[#F76300] text-white flex justify-center font-[poppins] font-normal text-[32px] leading-[48px] rounded-lg" type="button" data-modal-toggle="popup-modal">
+                Get Started
+            </Button>
+        </div>
+    </div>
+    <!-- ------- Toggle menu ends ---------- -->
+
+    <!-- ---- mobile Main section ----- -->
+    <div class="md:hidden bg-gradient-to-b from-[#803300] to-[#F76300] w-full h-[875px] relative top-[81px]">
+        <div class="flex w-full bg-tranparent absolute">
+            <svg class="top-[-73px] w-[62.8504672897%] absolute left-[20px]" viewBox="0 0 269 198" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.22" d="M243.621 25.9095L25.0119 172.893" stroke="#F76300" stroke-width="50"
+                    stroke-linecap="round" />
+            </svg>
+            <svg class="mt-[-62px] w-[94.1588785047%]" viewBox="0 0 403 321" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.22" d="M377.319 25.0268L-14.001 295.682" stroke="#F76300" stroke-width="50"
+                    stroke-linecap="round" />
+            </svg>
+            <svg class="top-[-63px] w-[92.523364486%] absolute right-0" viewBox="0 0 396 364" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.22" d="M463.273 25.4058L25.3495 338.36" stroke="#F76300" stroke-width="50"
+                    stroke-linecap="round" />
+            </svg>
+        </div>
+        <div class="z-100 pt-[33px] w-full">
+            <h1 class="text-center font-[poppins] text-[36px] font-bold text-white">LIGHTEN YOUR LIFE</h1>
+            <h1 class="text-center font-[poppins] text-[36px] font-bold text-white">WITH QUALITY!</h1>
+        </div>
+        <div class="z-50 mt-[15px] w-full flex justify-center">
+            <img src="./Pictures/Group 166.png">
+        </div>
+        <div class="w-full">
+            <p class="font-[poppins] text-[24px] leading-9 font-normal text-center text-white mx-[30px]">
+                Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The
+                Industry's St
+            </p>
+        </div>
+        <div class="w-full flex justify-center mt-[55px]">
+            <a href="#">
+            <button
+                class="w-[200px] h-[50px] rounded-full bg-white flex justify-center items-center text-[#F76300] text-[26px] font-normal" type="button" data-modal-toggle="popup-modal">
+                Get Started
+            </button>
+            </a>
+        </div>
+
+        <div>
+            <svg class="z-100 absolute top-[610px] right-0" width="96" height="290" viewBox="0 0 96 290" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.48">
+                    <path opacity="0.48"
+                        d="M21.1575 95.7993C23.5015 94.4554 24.3017 91.4553 22.9448 89.0985C21.588 86.7416 18.588 85.9205 16.244 87.2644C13.9001 88.6083 13.0999 91.6084 14.4568 93.9652C15.8136 96.322 18.8136 97.1432 21.1575 95.7993Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M31.6712 90.6772C34.0151 89.3333 34.8153 86.3333 33.4585 83.9764C32.1017 81.6196 29.1016 80.7984 26.7577 82.1423C24.4138 83.4862 23.6136 86.4863 24.9704 88.8431C26.3273 91.2 29.3273 92.0211 31.6712 90.6772Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M42.1849 85.5551C44.5288 84.2112 45.329 81.2112 43.9722 78.8543C42.6153 76.4975 39.6153 75.6764 37.2714 77.0203C34.9275 78.3642 34.1273 81.3642 35.4841 83.7211C36.8409 86.0779 39.841 86.899 42.1849 85.5551Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M52.6966 80.4331C55.0405 79.0892 55.8407 76.0891 54.4839 73.7323C53.1271 71.3754 50.127 70.5543 47.7831 71.8982C45.4392 73.2421 44.639 76.2421 45.9958 78.599C47.3526 80.9558 50.3527 81.777 52.6966 80.4331Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M63.2103 75.311C65.5542 73.9671 66.3544 70.967 64.9976 68.6102C63.6407 66.2534 60.6407 65.4322 58.2968 66.7761C55.9529 68.12 55.1527 71.1201 56.5095 73.4769C57.8663 75.8338 60.8664 76.6549 63.2103 75.311Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M73.724 70.1889C76.0679 68.845 76.8681 65.845 75.5112 63.4881C74.1544 61.1313 71.1544 60.3101 68.8104 61.654C66.4665 62.998 65.6663 65.998 67.0232 68.3548C68.38 70.7117 71.38 71.5328 73.724 70.1889Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M84.2376 65.0669C86.5815 63.7229 87.3817 60.7229 86.0249 58.3661C84.6681 56.0092 81.668 55.1881 79.3241 56.532C76.9802 57.8759 76.18 60.8759 77.5368 63.2328C78.8937 65.5896 81.8937 66.4108 84.2376 65.0669Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M94.7493 59.9448C97.0933 58.6009 97.8935 55.6008 96.5366 53.244C95.1798 50.8871 92.1798 50.066 89.8358 51.4099C87.4919 52.7538 86.6917 55.7539 88.0486 58.1107C89.4054 60.4675 92.4054 61.2887 94.7493 59.9448Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M26.7689 107.313C29.1128 105.97 29.913 102.969 28.5562 100.613C27.1993 98.2558 24.1993 97.4347 21.8554 98.7786C19.5114 100.122 18.7113 103.123 20.0681 105.479C21.4249 107.836 24.425 108.657 26.7689 107.313Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M37.2806 102.191C39.6245 100.847 40.4247 97.8474 39.0679 95.4906C37.7111 93.1337 34.711 92.3126 32.3671 93.6565C30.0232 95.0004 29.223 98.0004 30.5798 100.357C31.9366 102.714 34.9367 103.535 37.2806 102.191Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M47.7943 97.0693C50.1382 95.7254 50.9384 92.7253 49.5816 90.3685C48.2247 88.0117 45.2247 87.1905 42.8808 88.5344C40.5368 89.8783 39.7366 92.8784 41.0935 95.2352C42.4503 97.5921 45.4503 98.4132 47.7943 97.0693Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M58.3079 91.9472C60.6519 90.6033 61.4521 87.6033 60.0952 85.2464C58.7384 82.8896 55.7383 82.0684 53.3944 83.4123C51.0505 84.7563 50.2503 87.7563 51.6071 90.1131C52.964 92.47 55.964 93.2911 58.3079 91.9472Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M68.8197 86.8252C71.1636 85.4812 71.9638 82.4812 70.6069 80.1244C69.2501 77.7675 66.2501 76.9464 63.9061 78.2903C61.5622 79.6342 60.762 82.6342 62.1189 84.9911C63.4757 87.3479 66.4757 88.1691 68.8197 86.8252Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M79.3333 81.7031C81.6772 80.3592 82.4774 77.3591 81.1206 75.0023C79.7638 72.6454 76.7637 71.8243 74.4198 73.1682C72.0759 74.5121 71.2757 77.5122 72.6325 79.869C73.9894 82.2258 76.9894 83.047 79.3333 81.7031Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M89.847 76.581C92.1909 75.2371 92.9911 72.2371 91.6343 69.8802C90.2775 67.5234 87.2774 66.7022 84.9335 68.0461C82.5896 69.39 81.7894 72.3901 83.1462 74.7469C84.503 77.1038 87.5031 77.9249 89.847 76.581Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M100.361 71.4589C102.705 70.115 103.505 67.115 102.148 64.7581C100.791 62.4013 97.7911 61.5802 95.4472 62.9241C93.1032 64.268 92.3031 67.268 93.6599 69.6249C95.0167 71.9817 98.0168 72.8028 100.361 71.4589Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M32.3783 118.828C34.7222 117.484 35.5224 114.484 34.1655 112.127C32.8087 109.77 29.8087 108.949 27.4647 110.293C25.1208 111.637 24.3206 114.637 25.6775 116.994C27.0343 119.351 30.0343 120.172 32.3783 118.828Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M42.89 113.706C45.2339 112.362 46.0341 109.362 44.6773 107.005C43.3204 104.648 40.3204 103.827 37.9765 105.171C35.6325 106.515 34.8323 109.515 36.1892 111.872C37.546 114.229 40.5461 115.05 42.89 113.706Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M53.4036 108.584C55.7476 107.24 56.5478 104.24 55.1909 101.883C53.8341 99.5263 50.8341 98.7052 48.4901 100.049C46.1462 101.393 45.346 104.393 46.7028 106.75C48.0597 109.107 51.0597 109.928 53.4036 108.584Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M63.9173 103.462C66.2612 102.118 67.0614 99.1179 65.7046 96.7611C64.3478 94.4042 61.3477 93.5831 59.0038 94.927C56.6599 96.2709 55.8597 99.2709 57.2165 101.628C58.5733 103.985 61.5734 104.806 63.9173 103.462Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M74.431 98.3398C76.7749 96.9959 77.5751 93.9958 76.2183 91.639C74.8614 89.2822 71.8614 88.461 69.5175 89.8049C67.1736 91.1488 66.3734 94.1489 67.7302 96.5057C69.087 98.8626 72.0871 99.6837 74.431 98.3398Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M84.9427 93.2177C87.2866 91.8738 88.0868 88.8738 86.73 86.5169C85.3732 84.1601 82.3731 83.3389 80.0292 84.6829C77.6853 86.0268 76.8851 89.0268 78.2419 91.3836C79.5987 93.7405 82.5988 94.5616 84.9427 93.2177Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M95.4564 88.0957C97.8003 86.7518 98.6005 83.7517 97.2437 81.3949C95.8868 79.038 92.8868 78.2169 90.5429 79.5608C88.1989 80.9047 87.3988 83.9047 88.7556 86.2616C90.1124 88.6184 93.1125 89.4396 95.4564 88.0957Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M37.9876 130.342C40.3315 128.998 41.1317 125.998 39.7749 123.641C38.4181 121.285 35.418 120.463 33.0741 121.807C30.7302 123.151 29.93 126.151 31.2868 128.508C32.6437 130.865 35.6437 131.686 37.9876 130.342Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M48.5013 125.22C50.8452 123.876 51.6454 120.876 50.2886 118.519C48.9318 116.163 45.9317 115.341 43.5878 116.685C41.2439 118.029 40.4437 121.029 41.8005 123.386C43.1573 125.743 46.1574 126.564 48.5013 125.22Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M59.013 120.098C61.3569 118.754 62.1571 115.754 60.8003 113.397C59.4435 111.04 56.4434 110.219 54.0995 111.563C51.7556 112.907 50.9554 115.907 52.3122 118.264C53.6691 120.621 56.6691 121.442 59.013 120.098Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M69.5267 114.976C71.8706 113.632 72.6708 110.632 71.314 108.275C69.9571 105.918 66.9571 105.097 64.6132 106.441C62.2693 107.785 61.4691 110.785 62.8259 113.142C64.1827 115.499 67.1828 116.32 69.5267 114.976Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M80.0404 109.854C82.3843 108.51 83.1845 105.51 81.8276 103.153C80.4708 100.796 77.4708 99.9752 75.1269 101.319C72.7829 102.663 71.9827 105.663 73.3396 108.02C74.6964 110.377 77.6964 111.198 80.0404 109.854Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M90.554 104.732C92.898 103.388 93.6981 100.388 92.3413 98.0311C90.9845 95.6743 87.9844 94.8531 85.6405 96.197C83.2966 97.5409 82.4964 100.541 83.8532 102.898C85.2101 105.255 88.2101 106.076 90.554 104.732Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M101.066 99.6098C103.41 98.2659 104.21 95.2659 102.853 92.909C101.496 90.5522 98.4962 89.731 96.1522 91.0749C93.8083 92.4189 93.0081 95.4189 94.365 97.7757C95.7218 100.133 98.7218 100.954 101.066 99.6098Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M43.597 141.857C45.9409 140.513 46.7411 137.513 45.3843 135.156C44.0275 132.799 41.0274 131.978 38.6835 133.322C36.3396 134.666 35.5394 137.666 36.8962 140.023C38.253 142.38 41.2531 143.201 43.597 141.857Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M54.1107 136.735C56.4546 135.391 57.2548 132.391 55.898 130.034C54.5411 127.677 51.5411 126.856 49.1972 128.2C46.8532 129.544 46.0531 132.544 47.4099 134.901C48.7667 137.258 51.7668 138.079 54.1107 136.735Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M64.6243 131.613C66.9683 130.269 67.7685 127.269 66.4116 124.912C65.0548 122.555 62.0548 121.734 59.7108 123.078C57.3669 124.422 56.5667 127.422 57.9236 129.779C59.2804 132.136 62.2804 132.957 64.6243 131.613Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M75.1361 126.491C77.48 125.147 78.2802 122.147 76.9233 119.79C75.5665 117.433 72.5665 116.612 70.2226 117.956C67.8786 119.3 67.0784 122.3 68.4353 124.657C69.7921 127.013 72.7921 127.835 75.1361 126.491Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M85.6497 121.369C87.9937 120.025 88.7938 117.025 87.437 114.668C86.0802 112.311 83.0801 111.49 80.7362 112.834C78.3923 114.178 77.5921 117.178 78.9489 119.535C80.3058 121.891 83.3058 122.713 85.6497 121.369Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M96.1634 116.247C98.5073 114.903 99.3075 111.903 97.9507 109.546C96.5939 107.189 93.5938 106.368 91.2499 107.712C88.906 109.056 88.1058 112.056 89.4626 114.412C90.8194 116.769 93.8195 117.59 96.1634 116.247Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M49.2083 153.371C51.5522 152.027 52.3524 149.027 50.9956 146.67C49.6388 144.313 46.6387 143.492 44.2948 144.836C41.9509 146.18 41.1507 149.18 42.5075 151.537C43.8644 153.894 46.8644 154.715 49.2083 153.371Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M59.72 148.249C62.064 146.905 62.8642 143.905 61.5073 141.548C60.1505 139.191 57.1505 138.37 54.8065 139.714C52.4626 141.058 51.6624 144.058 53.0193 146.415C54.3761 148.772 57.3761 149.593 59.72 148.249Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M70.2337 143.127C72.5776 141.783 73.3778 138.783 72.021 136.426C70.6642 134.069 67.6641 133.248 65.3202 134.592C62.9763 135.936 62.1761 138.936 63.5329 141.293C64.8898 143.65 67.8898 144.471 70.2337 143.127Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M80.7474 138.005C83.0913 136.661 83.8915 133.661 82.5347 131.304C81.1778 128.947 78.1778 128.126 75.8339 129.47C73.49 130.814 72.6898 133.814 74.0466 136.171C75.4034 138.528 78.4035 139.349 80.7474 138.005Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M91.2591 132.883C93.603 131.539 94.4032 128.539 93.0464 126.182C91.6896 123.825 88.6895 123.004 86.3456 124.348C84.0017 125.692 83.2015 128.692 84.5583 131.049C85.9151 133.406 88.9152 134.227 91.2591 132.883Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M101.773 127.761C104.117 126.417 104.917 123.417 103.56 121.06C102.203 118.703 99.2032 117.882 96.8593 119.226C94.5154 120.57 93.7152 123.57 95.072 125.927C96.4288 128.283 99.4289 129.105 101.773 127.761Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M54.8177 164.885C57.1616 163.541 57.9618 160.541 56.605 158.184C55.2482 155.828 52.2481 155.006 49.9042 156.35C47.5603 157.694 46.7601 160.694 48.1169 163.051C49.4737 165.408 52.4738 166.229 54.8177 164.885Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M65.3314 159.763C67.6753 158.419 68.4755 155.419 67.1187 153.062C65.7618 150.706 62.7618 149.884 60.4179 151.228C58.0739 152.572 57.2738 155.572 58.6306 157.929C59.9874 160.286 62.9875 161.107 65.3314 159.763Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M75.8431 154.641C78.187 153.297 78.9872 150.297 77.6304 147.94C76.2736 145.583 73.2735 144.762 70.9296 146.106C68.5857 147.45 67.7855 150.45 69.1423 152.807C70.4991 155.164 73.4992 155.985 75.8431 154.641Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M86.3568 149.519C88.7007 148.175 89.5009 145.175 88.1441 142.818C86.7872 140.461 83.7872 139.64 81.4433 140.984C79.0993 142.328 78.2991 145.328 79.656 147.685C81.0128 150.042 84.0128 150.863 86.3568 149.519Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M96.8704 144.397C99.2144 143.053 100.015 140.053 98.6577 137.696C97.3009 135.339 94.3008 134.518 91.9569 135.862C89.613 137.206 88.8128 140.206 90.1696 142.563C91.5265 144.92 94.5265 145.741 96.8704 144.397Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M60.4271 176.4C62.771 175.056 63.5712 172.056 62.2144 169.699C60.8575 167.342 57.8575 166.521 55.5136 167.865C53.1697 169.209 52.3695 172.209 53.7263 174.566C55.0831 176.923 58.0832 177.744 60.4271 176.4Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M70.9408 171.278C73.2847 169.934 74.0849 166.934 72.728 164.577C71.3712 162.22 68.3712 161.399 66.0272 162.743C63.6833 164.087 62.8831 167.087 64.24 169.444C65.5968 171.801 68.5968 172.622 70.9408 171.278Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M81.4544 166.156C83.7983 164.812 84.5985 161.812 83.2417 159.455C81.8849 157.098 78.8848 156.277 76.5409 157.621C74.197 158.965 73.3968 161.965 74.7536 164.322C76.1105 166.678 79.1105 167.5 81.4544 166.156Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M91.9661 161.034C94.3101 159.69 95.1103 156.69 93.7534 154.333C92.3966 151.976 89.3966 151.155 87.0526 152.499C84.7087 153.843 83.9085 156.843 85.2653 159.2C86.6222 161.556 89.6222 162.378 91.9661 161.034Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M102.48 155.912C104.824 154.568 105.624 151.568 104.267 149.211C102.91 146.854 99.9102 146.033 97.5663 147.377C95.2224 148.721 94.4222 151.721 95.779 154.077C97.1358 156.434 100.136 157.255 102.48 155.912Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M66.0365 187.914C68.3804 186.57 69.1806 183.57 67.8237 181.213C66.4669 178.856 63.4669 178.035 61.1229 179.379C58.779 180.723 57.9788 183.723 59.3357 186.08C60.6925 188.437 63.6925 189.258 66.0365 187.914Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M76.5501 182.792C78.894 181.448 79.6942 178.448 78.3374 176.091C76.9806 173.734 73.9805 172.913 71.6366 174.257C69.2927 175.601 68.4925 178.601 69.8493 180.958C71.2062 183.315 74.2062 184.136 76.5501 182.792Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M87.0638 177.67C89.4077 176.326 90.2079 173.326 88.8511 170.969C87.4943 168.612 84.4942 167.791 82.1503 169.135C79.8064 170.479 79.0062 173.479 80.363 175.836C81.7198 178.193 84.7199 179.014 87.0638 177.67Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M97.5775 172.548C99.9214 171.204 100.722 168.204 99.3648 165.847C98.0079 163.49 95.0079 162.669 92.664 164.013C90.32 165.357 89.5198 168.357 90.8767 170.714C92.2335 173.071 95.2336 173.892 97.5775 172.548Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M71.6478 199.429C73.9917 198.085 74.7919 195.085 73.4351 192.728C72.0782 190.371 69.0782 189.55 66.7343 190.894C64.3904 192.238 63.5902 195.238 64.947 197.595C66.3038 199.951 69.3039 200.773 71.6478 199.429Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M82.1595 194.307C84.5034 192.963 85.3036 189.963 83.9468 187.606C82.59 185.249 79.5899 184.428 77.246 185.772C74.9021 187.116 74.1019 190.116 75.4587 192.473C76.8155 194.829 79.8156 195.651 82.1595 194.307Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M92.6732 189.185C95.0171 187.841 95.8173 184.841 94.4605 182.484C93.1036 180.127 90.1036 179.306 87.7597 180.65C85.4157 181.994 84.6156 184.994 85.9724 187.35C87.3292 189.707 90.3293 190.528 92.6732 189.185Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M103.187 184.062C105.531 182.719 106.331 179.719 104.974 177.362C103.617 175.005 100.617 174.184 98.2733 175.528C95.9294 176.871 95.1292 179.872 96.4861 182.228C97.8429 184.585 100.843 185.406 103.187 184.062Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M77.2572 210.943C79.6011 209.599 80.4013 206.599 79.0444 204.242C77.6876 201.885 74.6876 201.064 72.3436 202.408C69.9997 203.752 69.1995 206.752 70.5564 209.109C71.9132 211.466 74.9132 212.287 77.2572 210.943Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M87.7708 205.821C90.1147 204.477 90.9149 201.477 89.5581 199.12C88.2013 196.763 85.2012 195.942 82.8573 197.286C80.5134 198.63 79.7132 201.63 81.07 203.987C82.4269 206.344 85.4269 207.165 87.7708 205.821Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M98.2825 200.699C100.626 199.355 101.427 196.355 100.07 193.998C98.713 191.641 95.713 190.82 93.369 192.164C91.0251 193.508 90.2249 196.508 91.5818 198.865C92.9386 201.221 95.9386 202.043 98.2825 200.699Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M82.8665 222.457C85.2105 221.113 86.0106 218.113 84.6538 215.756C83.297 213.399 80.2969 212.578 77.953 213.922C75.6091 215.266 74.8089 218.266 76.1657 220.623C77.5226 222.98 80.5226 223.801 82.8665 222.457Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M93.3802 217.335C95.7241 215.991 96.5243 212.991 95.1675 210.634C93.8107 208.277 90.8106 207.456 88.4667 208.8C86.1228 210.144 85.3226 213.144 86.6794 215.501C88.0362 217.858 91.0363 218.679 93.3802 217.335Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M103.894 212.213C106.238 210.869 107.038 207.869 105.681 205.512C104.324 203.155 101.324 202.334 98.9804 203.678C96.6364 205.022 95.8363 208.022 97.1931 210.379C98.5499 212.736 101.55 213.557 103.894 212.213Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M88.4759 233.972C90.8198 232.628 91.62 229.628 90.2632 227.271C88.9064 224.914 85.9063 224.093 83.5624 225.437C81.2185 226.781 80.4183 229.781 81.7751 232.138C83.1319 234.494 86.132 235.316 88.4759 233.972Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M98.9896 228.85C101.333 227.506 102.134 224.506 100.777 222.149C99.42 219.792 96.42 218.971 94.0761 220.315C91.7322 221.659 90.932 224.659 92.2888 227.015C93.6456 229.372 96.6457 230.193 98.9896 228.85Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M94.0872 245.486C96.4312 244.142 97.2313 241.142 95.8745 238.785C94.5177 236.428 91.5176 235.607 89.1737 236.951C86.8298 238.295 86.0296 241.295 87.3864 243.652C88.7433 246.009 91.7433 246.83 94.0872 245.486Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M104.599 240.364C106.943 239.02 107.743 236.02 106.386 233.663C105.029 231.306 102.029 230.485 99.6854 231.829C97.3415 233.173 96.5413 236.173 97.8982 238.53C99.255 240.886 102.255 241.708 104.599 240.364Z"
+                        fill="white" />
+                    <path opacity="0.48"
+                        d="M99.6966 257C102.041 255.657 102.841 252.656 101.484 250.3C100.127 247.943 97.127 247.122 94.7831 248.466C92.4392 249.809 91.639 252.81 92.9958 255.166C94.3526 257.523 97.3527 258.344 99.6966 257Z"
+                        fill="white" />
+                </g>
+            </svg>
+        </div>
+    </div>
+    <!-- ---- mobile Main section ends ----- -->
+
+    <!-- ----- Desktop Main section -------- -->
+    <div class="hidden md:block desktopMain md:h-[420px] lg:h-[760px]">
+        <div class="hidden md:block md:ml-[70px] md:pt-[90px] lg:pt-[180px]">
+            <h1 class="font-[poppins] md:mt-3 lg:mt-0 md:text-[38px] font-semibold text-[40px] lg:text-[44px] xl:text-[46px] md:leading-10 lg:leading-12 leading-12 text-white">Lighten
+                - up Your life</h1>
+            <h1 class="font-[poppins] md:text-[38px] font-normal text-[40px] lg:text-[44px] xl:text-[46px] md:leading-11 lg:leading-12 leading-12 text-white">With
+                Quality</h1>
+            <p
+                class="w-[48%] mt-[20px] md:mt-3 lg:mt-[50px] font-[poppins] font-light text-[16px] lg:text-[24px] md:leading-6 lg:leading-9 leading-9 text-white">
+                Lorem Ipsum Is Simply Dummy TexOf The Printing And pesetting Industry.Lorem Ipsum Has Been The Industre
+            </p>
+            <button
+                class="mt-[20px] w-[186px] md:mt-9 lg:mt-[140px] h-[48px] lg:text-[22px] bg-white rounded-full text-[#F76300] font-[poppins] font-normal text-[24]vleading-9 flex items-center justify-center">
+                Get Started
+            </button>
+        </div>
+    </div>
+
+    <!-- ------ Gallery section starts from here --------- -->
+    <div class="mt-[82px] md:mt-0 md:flex md:w-full">
+        <div class="mt-[39px] mx-4 md:ml-4 md:mr-0 md:w-[50%] lg:ml-[66px]">
+            <div class="flex justify-center mb-[25px]">
+                <h1 class="mt-[21px] font-[poppins] font-semibold text-[24px] leading-9 text-[#F76300]">About NEECA</h1>
+            </div>
+            <p class="font-[poppins] font-normal text-[20px] leading-[30px]">
+                Lorem Ipsum Is Simply Dummy TexOf The PrintAnd pesetting Industry.Lorem Ipsum Has Been The Industre
+            </p>
+            <ul
+                class="font-[poppins] font-normal text-[20px] md:text-[18px] lg:text-[20px] xl:text-[22px] leading-9 mt-[46px] md:mt-[30px] list-disc ml-4">
+                <li>Lorem Ipsum Is Simply Dummy TexOf </li>
+                <li>Lorem Ipsum Is Simply Dummy TexOf </li>
+            </ul>
+            <p
+                class="font-[poppins] font-normal text-[20px] md:text-[18px] lg:text-[20px] xl:text-[22px] leading-9 mt-[46px] md:mt-[30px] ml-4">
+                Lorem Ipsum Is Simply Dummy TexOf The And pesetting Industry.Lorem Ips
+            </p>
+        </div>
+
+        <div class="mt-[45px] w-full overflow-x-hidden md:w-[50%]">        
+        <div class="slider-container">
+            
+            <div class="slides fade">
+                <div class="slider-numbers">1/4</div>
+                <div class="slider-image"><img src="./Pictures/NEECA 1.jpg" alt="background_1"></div>
+                <div class="slider-caption">Caption 1</div>
+            </div> 
+            
+            <div class="slides fade">
+                <div class="slider-numbers">2/4</div>
+                <div class="slider-image"><img src="./Pictures/NEECA 2.jpg" alt="background_2"></div>
+                <div class="slider-caption">Caption 2</div>
+            </div> 
+            
+            <div class="slides fade">
+                <div class="slider-numbers">3/4</div>
+                <div class="slider-image"><img src="./Pictures/NEECA 3.jpg" alt="background_3"></div>
+                <div class="slider-caption">Caption 3</div>
+            </div> 
+            
+            <div class="slides fade">
+                <div class="slider-numbers">4/4</div>
+                <div class="slider-image"><img src="./Pictures/NEECA 6.jpeg" alt="background_4"></div>
+                <div class="slider-caption">Caption 4</div>
+            </div> 
+            
+            
+            <a class="prev" onclick="plusIndex(-1)">&#10094;</a>
+            <a class="next" onclick="plusIndex(+1)">&#10095;</a>
+           
+            <div class="slider-bullets" id="slider-bullets">
+                <span class="dots" onclick="currentSlide(1)"></span>
+                <span class="dots" onclick="currentSlide(2)"></span>
+                <span class="dots" onclick="currentSlide(3)"></span>
+                <span class="dots" onclick="currentSlide(4)"></span>
+            </div> 
+            
+        </div> 
+        </div>
+    </div>
+    <!-- ------ Gallery section ends here --------- -->
+    <div class="bg-[#F3F3F3]">
+        <div class="md:mx-[80px] md:flex md:mt-10">
+            <div>
+                <!-- --------- Tips section starts from here ----------- -->
+                <div class="w-full mb-4 mt-[59px] md:mt-[27px]">
+                    <div class="mx-[11px] shadow-xl rounded-b-xl">
+                        <div class="w-full h-[35px] md:h-[40px] lg:h-[45px] bg-[#F76300] flex justify-center items-center rounded-t-md">
+                            <h1 class="font-[poppins] font-bold text-[24px] leading-9 text-white">Tips</h1>
+                        </div>
+                        <div class="scrollerm h-[170px] overflow-y-scroll overflow-y-hidden">
+                            <div>
+                                <div class="flex my-2">
+                                    <div class="flex justify-center items-start">
+                                        <svg class="ml-2 w-[18px]" viewBox="0 0 16 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.36523 21.4678H9.9624V23.0002H5.36523V21.4678Z" fill="#F76300" />
+                                            <path d="M4.59766 19.1689H10.7272V20.7013H4.59766V19.1689Z"
+                                                fill="#F76300" />
+                                            <path
+                                                d="M13.0944 2.25009C12.0221 1.17603 10.6551 0.444378 9.16661 0.147808C7.67813 -0.148762 6.13512 0.00309192 4.73302 0.584137C3.33091 1.16518 2.13279 2.14928 1.2904 3.41177C0.448013 4.67427 -0.000735953 6.15838 0.000989144 7.67611C-0.0158875 8.74012 0.183353 9.79649 0.586646 10.7812C0.989939 11.766 1.58889 12.6587 2.34725 13.4052L2.55633 13.6013C3.41856 14.4077 4.59952 15.5124 4.59952 16.4877V18.4035H6.8981V12.1377L4.77796 10.935L5.65312 9.67639L7.66293 10.7409L9.63801 9.66822L10.5527 10.8982L8.42708 12.1432V18.4022H10.7277V16.487C10.7277 15.5335 11.8944 14.4309 12.7464 13.6265L12.9813 13.4032C13.7465 12.6627 14.3498 11.7717 14.7532 10.7863C15.1566 9.80091 15.3512 8.74258 15.3249 7.67815C15.3302 6.67088 15.1359 5.67254 14.753 4.74085C14.3702 3.80915 13.8064 2.96259 13.0944 2.25009Z"
+                                                fill="#F76300" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="ml-[25px] font-[poppins] font-normal lg:text-[18px] lg:leading-[30px] text-[16px] leading-[24px] mr-[45px]">
+                                            Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.
+                                            Lorem Ipsum
+                                            Has Been
+                                        </p>
+                                    </div>
+                                </div>
+                                <hr class="w-[90%] h-[2px] border-[#F76300] m-auto">
+                            </div>
+                            <div>
+                                <div class="flex my-2">
+                                    <div class="flex justify-center items-start">
+                                        <svg class="ml-2 w-[18px]" viewBox="0 0 16 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.36523 21.4678H9.9624V23.0002H5.36523V21.4678Z" fill="#F76300" />
+                                            <path d="M4.59766 19.1689H10.7272V20.7013H4.59766V19.1689Z"
+                                                fill="#F76300" />
+                                            <path
+                                                d="M13.0944 2.25009C12.0221 1.17603 10.6551 0.444378 9.16661 0.147808C7.67813 -0.148762 6.13512 0.00309192 4.73302 0.584137C3.33091 1.16518 2.13279 2.14928 1.2904 3.41177C0.448013 4.67427 -0.000735953 6.15838 0.000989144 7.67611C-0.0158875 8.74012 0.183353 9.79649 0.586646 10.7812C0.989939 11.766 1.58889 12.6587 2.34725 13.4052L2.55633 13.6013C3.41856 14.4077 4.59952 15.5124 4.59952 16.4877V18.4035H6.8981V12.1377L4.77796 10.935L5.65312 9.67639L7.66293 10.7409L9.63801 9.66822L10.5527 10.8982L8.42708 12.1432V18.4022H10.7277V16.487C10.7277 15.5335 11.8944 14.4309 12.7464 13.6265L12.9813 13.4032C13.7465 12.6627 14.3498 11.7717 14.7532 10.7863C15.1566 9.80091 15.3512 8.74258 15.3249 7.67815C15.3302 6.67088 15.1359 5.67254 14.753 4.74085C14.3702 3.80915 13.8064 2.96259 13.0944 2.25009Z"
+                                                fill="#F76300" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="ml-[25px] font-[poppins] font-normal lg:text-[18px] lg:leading-[30px] text-[16px] leading-[24px] mr-[45px]">
+                                            Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.
+                                            Lorem Ipsum
+                                            Has Been
+                                        </p>
+                                    </div>
+                                </div>
+                                <hr class="w-[90%] h-[2px] border-[#F76300] m-auto">
+                            </div>
+                            <div>
+                                <div class="flex my-2">
+                                    <div class="flex justify-center items-start">
+                                        <svg class="ml-2 w-[18px]" viewBox="0 0 16 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.36523 21.4678H9.9624V23.0002H5.36523V21.4678Z" fill="#F76300" />
+                                            <path d="M4.59766 19.1689H10.7272V20.7013H4.59766V19.1689Z"
+                                                fill="#F76300" />
+                                            <path
+                                                d="M13.0944 2.25009C12.0221 1.17603 10.6551 0.444378 9.16661 0.147808C7.67813 -0.148762 6.13512 0.00309192 4.73302 0.584137C3.33091 1.16518 2.13279 2.14928 1.2904 3.41177C0.448013 4.67427 -0.000735953 6.15838 0.000989144 7.67611C-0.0158875 8.74012 0.183353 9.79649 0.586646 10.7812C0.989939 11.766 1.58889 12.6587 2.34725 13.4052L2.55633 13.6013C3.41856 14.4077 4.59952 15.5124 4.59952 16.4877V18.4035H6.8981V12.1377L4.77796 10.935L5.65312 9.67639L7.66293 10.7409L9.63801 9.66822L10.5527 10.8982L8.42708 12.1432V18.4022H10.7277V16.487C10.7277 15.5335 11.8944 14.4309 12.7464 13.6265L12.9813 13.4032C13.7465 12.6627 14.3498 11.7717 14.7532 10.7863C15.1566 9.80091 15.3512 8.74258 15.3249 7.67815C15.3302 6.67088 15.1359 5.67254 14.753 4.74085C14.3702 3.80915 13.8064 2.96259 13.0944 2.25009Z"
+                                                fill="#F76300" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="ml-[25px] font-[poppins] font-normal text-[16px] lg:text-[18px] lg:leading-[30px] leading-[24px] mr-[45px]">
+                                            Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.
+                                            Lorem Ipsum
+                                            Has Been
+                                        </p>
+                                    </div>
+                                </div>
+                                <hr class="w-[90%] h-[2px] border-[#F76300] m-auto">
+                            </div>
+                            <div>
+                                <div class="flex my-2">
+                                    <div class="flex justify-center items-start">
+                                        <svg class="ml-2 w-[18px]" viewBox="0 0 16 23" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5.36523 21.4678H9.9624V23.0002H5.36523V21.4678Z" fill="#F76300" />
+                                            <path d="M4.59766 19.1689H10.7272V20.7013H4.59766V19.1689Z"
+                                                fill="#F76300" />
+                                            <path
+                                                d="M13.0944 2.25009C12.0221 1.17603 10.6551 0.444378 9.16661 0.147808C7.67813 -0.148762 6.13512 0.00309192 4.73302 0.584137C3.33091 1.16518 2.13279 2.14928 1.2904 3.41177C0.448013 4.67427 -0.000735953 6.15838 0.000989144 7.67611C-0.0158875 8.74012 0.183353 9.79649 0.586646 10.7812C0.989939 11.766 1.58889 12.6587 2.34725 13.4052L2.55633 13.6013C3.41856 14.4077 4.59952 15.5124 4.59952 16.4877V18.4035H6.8981V12.1377L4.77796 10.935L5.65312 9.67639L7.66293 10.7409L9.63801 9.66822L10.5527 10.8982L8.42708 12.1432V18.4022H10.7277V16.487C10.7277 15.5335 11.8944 14.4309 12.7464 13.6265L12.9813 13.4032C13.7465 12.6627 14.3498 11.7717 14.7532 10.7863C15.1566 9.80091 15.3512 8.74258 15.3249 7.67815C15.3302 6.67088 15.1359 5.67254 14.753 4.74085C14.3702 3.80915 13.8064 2.96259 13.0944 2.25009Z"
+                                                fill="#F76300" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="ml-[25px] font-[poppins] font-normal text-[16px] lg:text-[18px] lg:leading-[30px] leading-[24px] mr-[45px]">
+                                            Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.
+                                            Lorem Ipsum
+                                            Has Been
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- --------- Tips section ends here ----------- -->
+
+                <!-- ----------- Faq's 1 ----------- -->
+                <div class="w-full mb-5 md:mt-0">
+                    <div class="mx-[11px] shadow-xl rounded-b-xl">
+                        <div class="w-full h-[35px] md:h-[40px] lg:h-[45px] bg-[#F76300] flex justify-center items-center rounded-t-md">
+                            <h1 class="font-[poppins] font-bold text-[24px] leading-9 text-white">Faq's</h1>
+                        </div>
+                        <div class="scrollerm h-[170px] overflow-y-scroll overflow-y-hidden">
+                            <div>
+                                <div class="flex my-2">
+                                    <div class="flex justify-center items-start">
+                                        <svg class="ml-2" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.4615 6.46148L9.53845 1.53845C8.68879 0.688787 7.31121 0.688787 6.46155 1.53845L1.53852 6.46148C0.688857 7.31114 0.688857 8.68872 1.53852 9.53838L6.46155 14.4614C7.31121 15.3111 8.68879 15.3111 9.53845 14.4614L14.4615 9.53838C15.3111 8.68872 15.3111 7.31114 14.4615 6.46148Z"
+                                                fill="#F76300" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="ml-[15px] font-[poppins] lg:text-[18px] lg:leading-[30px] font-semibold text-[16px] leading-[24px] mr-[35px]">
+                                            Lorem Ipsum Is Simply Dummy Text Of?
+                                        </p>
+                                        <p
+                                            class="ml-[23px] font-[poppins] lg:text-[18px] lg:leading-[30px] font-normal text-[16px] leading-[24px] mr-[43px]">
+                                            Lorem Ipsum Is Simply Dummy Text Of the The Printing And Typesetting Indu
+                                        </p>
+                                    </div>
+                                </div>
+                                <hr class="w-[90%] h-[2px] border-[#F76300] m-auto">
+                            </div>
+                            <div>
+                                <div class="flex my-2">
+                                    <div class="flex justify-center items-start">
+                                        <svg class="ml-2" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.4615 6.46148L9.53845 1.53845C8.68879 0.688787 7.31121 0.688787 6.46155 1.53845L1.53852 6.46148C0.688857 7.31114 0.688857 8.68872 1.53852 9.53838L6.46155 14.4614C7.31121 15.3111 8.68879 15.3111 9.53845 14.4614L14.4615 9.53838C15.3111 8.68872 15.3111 7.31114 14.4615 6.46148Z"
+                                                fill="#F76300" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="ml-[15px] font-[poppins] lg:text-[18px] lg:leading-[30px] font-semibold text-[16px] leading-[24px] mr-[35px]">
+                                            Lorem Ipsum Is Simply Dummy Text Of?
+                                        </p>
+                                        <p
+                                            class="ml-[23px] font-[poppins] lg:text-[18px] lg:leading-[30px] font-normal text-[16px] leading-[24px] mr-[43px]">
+                                            Lorem Ipsum Is Simply Dummy Text Of the The Printing And Typesetting Indu
+                                        </p>
+                                    </div>
+                                </div>
+                                <hr class="w-[90%] h-[2px] border-[#F76300] m-auto">
+                            </div>
+                            <div>
+                                <div class="flex my-2">
+                                    <div class="flex justify-center items-start">
+                                        <svg class="ml-2" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.4615 6.46148L9.53845 1.53845C8.68879 0.688787 7.31121 0.688787 6.46155 1.53845L1.53852 6.46148C0.688857 7.31114 0.688857 8.68872 1.53852 9.53838L6.46155 14.4614C7.31121 15.3111 8.68879 15.3111 9.53845 14.4614L14.4615 9.53838C15.3111 8.68872 15.3111 7.31114 14.4615 6.46148Z"
+                                                fill="#F76300" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="ml-[15px] lg:text-[18px] lg:leading-[30px] font-[poppins] font-semibold text-[16px] leading-[24px] mr-[35px]">
+                                            Lorem Ipsum Is Simply Dummy Text Of?
+                                        </p>
+                                        <p
+                                            class="ml-[23px] lg:text-[18px] lg:leading-[30px] font-[poppins] font-normal text-[16px] leading-[24px] mr-[43px]">
+                                            Lorem Ipsum Is Simply Dummy Text Of the The Printing And Typesetting Indu
+                                        </p>
+                                    </div>
+                                </div>
+                                <hr class="w-[90%] h-[2px] border-[#F76300] m-auto">
+                            </div>
+                            <div>
+                                <div class="flex my-2">
+                                    <div class="flex justify-center items-start">
+                                        <svg class="ml-2" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.4615 6.46148L9.53845 1.53845C8.68879 0.688787 7.31121 0.688787 6.46155 1.53845L1.53852 6.46148C0.688857 7.31114 0.688857 8.68872 1.53852 9.53838L6.46155 14.4614C7.31121 15.3111 8.68879 15.3111 9.53845 14.4614L14.4615 9.53838C15.3111 8.68872 15.3111 7.31114 14.4615 6.46148Z"
+                                                fill="#F76300" />
+                                        </svg>
+
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="ml-[15px] font-[poppins] font-semibold text-[16px] lg:text-[18px] lg:leading-[30px] leading-[24px] mr-[35px]">
+                                            Lorem Ipsum Is Simply Dummy Text Of?
+                                        </p>
+                                        <p
+                                            class="ml-[23px] font-[poppins] font-normal text-[16px] lg:text-[18px] lg:leading-[30px] leading-[24px] mr-[43px]">
+                                            Lorem Ipsum Is Simply Dummy Text Of the The Printing And Typesetting Indu
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ----------- Faq's 1 ends ----------- -->
+            </div>
+            <!-- ----------- News & Updates ----------- -->
+            <div class="w-full mb-5 md:mt-[27px]">
+                <div class="mx-[11px] shadow-xl rounded-b-xl">
+                    <div class="w-full h-[35px] md:h-[40px] lg:h-[45px] bg-[#F76300] flex justify-center items-center rounded-t-md">
+                        <h1 class="font-[poppins] font-bold text-[24px] leading-9 text-white">News & Updates</h1>
+                    </div>
+                    <div class="scrollerm h-[400px] overflow-y-scroll overflow-y-hidden">
+                        <div>
+                            <div class="flex my-2">
+                                <div>
+                                    <p
+                                        class="ml-[23px] font-[poppins] font-normal lg:text-[20px] lg:leading-9 text-[18px] leading-[27px] mr-[35px]">
+                                        <strong>Lorem Ipsum</strong> Is Simply Dummy Text Of The Printing And
+                                        Typesetting
+                                        Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The
+                                        1500S,
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center">
+                                <button
+                                    class="w-[76px] h-[28px] bg-[#F76300] rounded-lg flex justify-center items-center">
+                                    <svg width="11" height="9" viewBox="0 0 11 9" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.60711 8.40151C6.48551 8.58562 6.32079 8.73657 6.12754 8.84097C5.9343 8.94537 5.71851 9 5.49934 9C5.28016 9 5.06438 8.94537 4.87113 8.84097C4.67789 8.73657 4.51316 8.58562 4.39157 8.40151L0.222113 2.08761C0.0890446 1.88519 0.0127974 1.65016 0.00147533 1.40749C-0.00984573 1.16482 0.0441828 0.923584 0.157816 0.709439C0.27145 0.495296 0.44044 0.316244 0.64682 0.191325C0.8532 0.0664053 1.08925 0.000287056 1.32988 0L9.66879 0C9.90973 4.48227e-05 10.1462 0.0660982 10.3528 0.19112C10.5595 0.316141 10.7287 0.495445 10.8424 0.709917C10.9561 0.924389 11.0101 1.16599 10.9985 1.40897C10.9869 1.65194 10.9102 1.88719 10.7766 2.08962L6.60711 8.40151Z"
+                                            fill="white" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <hr class="w-[90%] h-[2px] border-[#F76300] m-auto mt-[19px]">
+                        </div>
+                        <div>
+                            <div class="flex my-2">
+                                <div>
+                                    <p
+                                        class="ml-[23px] font-[poppins] font-normal lg:text-[20px] lg:leading-9 text-[18px] leading-[27px] mr-[35px]">
+                                        <strong>Lorem Ipsum</strong> Is Simply Dummy Text Of The Printing And
+                                        Typesetting
+                                        Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The
+                                        1500S,
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center">
+                                <button
+                                    class="w-[76px] h-[28px] bg-[#F76300] rounded-lg flex justify-center items-center">
+                                    <svg width="11" height="9" viewBox="0 0 11 9" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.60711 8.40151C6.48551 8.58562 6.32079 8.73657 6.12754 8.84097C5.9343 8.94537 5.71851 9 5.49934 9C5.28016 9 5.06438 8.94537 4.87113 8.84097C4.67789 8.73657 4.51316 8.58562 4.39157 8.40151L0.222113 2.08761C0.0890446 1.88519 0.0127974 1.65016 0.00147533 1.40749C-0.00984573 1.16482 0.0441828 0.923584 0.157816 0.709439C0.27145 0.495296 0.44044 0.316244 0.64682 0.191325C0.8532 0.0664053 1.08925 0.000287056 1.32988 0L9.66879 0C9.90973 4.48227e-05 10.1462 0.0660982 10.3528 0.19112C10.5595 0.316141 10.7287 0.495445 10.8424 0.709917C10.9561 0.924389 11.0101 1.16599 10.9985 1.40897C10.9869 1.65194 10.9102 1.88719 10.7766 2.08962L6.60711 8.40151Z"
+                                            fill="white" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <hr class="w-[90%] h-[2px] border-[#F76300] m-auto mt-[19px]">
+                        </div>
+                        <div>
+                            <div class="flex my-2">
+                                <div>
+                                    <p
+                                        class="ml-[23px] font-[poppins] font-normal text-[18px] lg:text-[20px] lg:leading-9 leading-[27px] mr-[35px]">
+                                        <strong>Lorem Ipsum</strong> Is Simply Dummy Text Of The Printing And
+                                        Typesetting
+                                        Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The
+                                        1500S,
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center">
+                                <button
+                                    class="w-[76px] h-[28px] bg-[#F76300] rounded-lg flex justify-center items-center">
+                                    <svg width="11" height="9" viewBox="0 0 11 9" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.60711 8.40151C6.48551 8.58562 6.32079 8.73657 6.12754 8.84097C5.9343 8.94537 5.71851 9 5.49934 9C5.28016 9 5.06438 8.94537 4.87113 8.84097C4.67789 8.73657 4.51316 8.58562 4.39157 8.40151L0.222113 2.08761C0.0890446 1.88519 0.0127974 1.65016 0.00147533 1.40749C-0.00984573 1.16482 0.0441828 0.923584 0.157816 0.709439C0.27145 0.495296 0.44044 0.316244 0.64682 0.191325C0.8532 0.0664053 1.08925 0.000287056 1.32988 0L9.66879 0C9.90973 4.48227e-05 10.1462 0.0660982 10.3528 0.19112C10.5595 0.316141 10.7287 0.495445 10.8424 0.709917C10.9561 0.924389 11.0101 1.16599 10.9985 1.40897C10.9869 1.65194 10.9102 1.88719 10.7766 2.08962L6.60711 8.40151Z"
+                                            fill="white" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <hr class="w-[90%] h-[2px] border-[#F76300] m-auto mt-[19px]">
+                        </div>
+                        <div>
+                            <div class="flex my-2">
+                                <div>
+                                    <p
+                                        class="ml-[23px] font-[poppins] font-normal text-[18px] lg:text-[20px] lg:leading-9 leading-[27px] mr-[35px]">
+                                        <strong>Lorem Ipsum</strong> Is Simply Dummy Text Of The Printing And
+                                        Typesetting
+                                        Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The
+                                        1500S,
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex justify-center mb-5">
+                                <button
+                                    class="w-[76px] h-[28px] bg-[#F76300] rounded-lg flex justify-center items-center">
+                                    <svg width="11" height="9" viewBox="0 0 11 9" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.60711 8.40151C6.48551 8.58562 6.32079 8.73657 6.12754 8.84097C5.9343 8.94537 5.71851 9 5.49934 9C5.28016 9 5.06438 8.94537 4.87113 8.84097C4.67789 8.73657 4.51316 8.58562 4.39157 8.40151L0.222113 2.08761C0.0890446 1.88519 0.0127974 1.65016 0.00147533 1.40749C-0.00984573 1.16482 0.0441828 0.923584 0.157816 0.709439C0.27145 0.495296 0.44044 0.316244 0.64682 0.191325C0.8532 0.0664053 1.08925 0.000287056 1.32988 0L9.66879 0C9.90973 4.48227e-05 10.1462 0.0660982 10.3528 0.19112C10.5595 0.316141 10.7287 0.495445 10.8424 0.709917C10.9561 0.924389 11.0101 1.16599 10.9985 1.40897C10.9869 1.65194 10.9102 1.88719 10.7766 2.08962L6.60711 8.40151Z"
+                                            fill="white" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ----------- News & Updates ----------- -->
+        </div>
+    </div>
+    <!-- ------- Footer ---------- -->
+    <div class="bg-gradient-to-r from-[#F76300] to-[#A24302] flex justify-center flex-col md:items-center">
+        <div class="md:w-[79.16666666667%] lg:w-[84.375%] lg:flex">
+            <div class="w-full lg:w-[100%] lg:flex lg:justify-between">
+            <div class="flex justify-start mx-4 lg:mt-7 lg:mx-0">
+                <img class="rounded-xl mt-[17px] lg:mt-0 lg:w-[107px] lg:h-[107px]" src="./Pictures/img.NoPath - Copy-3 (1).png">
+            </div>
+            <div class="mx-4 lg:mt-7 lg:mt-7">
+                <div class="flex justify-between mt-[21px] lg:mt-0">
+                    <ul class="flex flex-col items-center w-full">
+                        <li class="font-[poppins] font-semibold text-[28px] md:text-[22px] lg:text-[24px] xl:text-[26] leading-[42px] text-white">Home</li>
+                        <li class="font-[poppins] font-semibold text-[28px] md:text-[22px] lg:text-[24px] xl:text-[26] mt-2 leading-[42px] text-white">About Us
+                        </li>
+                        <li class="font-[poppins] font-semibold text-[28px] md:text-[22px] lg:text-[24px] xl:text-[26] mt-2 leading-[42px] text-white">News</li>
+                        <li class="font-[poppins] font-semibold text-[28px] md:text-[22px] lg:text-[24px] xl:text-[26] mt-2 leading-[42px] text-white">Search
+                            Products
+                        </li>
+                        <li class="font-[poppins] font-semibold text-[28px] md:text-[22px] lg:text-[24px] xl:text-[26] mt-2 leading-[42px] text-white">Get Started
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mx-[17px] mt-[44px] pb-[15px] lg:mx-0 lg:mt-7 lg:w-[390px]">
+                <form class="font-[poppins] font-normal text-base leading-[24px] text-white">
+                    <label for="fname">Name</label><br>
+                    <input class="h-[39px] w-full bg-white rounded-lg" type="text" id="fname" name="firstname"><br>
+
+                    <label class="mt-2" for="lname">Email</label><br>
+                    <input class="h-[39px] w-full bg-white rounded-lg" type="email" id="emailid" name="email"><br>
+
+                    <label class="mt-2" for="subject">Type</label><br>
+                    <textarea class="h-[150px] w-full bg-white rounded-lg" id="subject" name="subject"></textarea><br>
+
+                    <div class="flex justify-end">
+                        <input
+                            class="w-[147px] h-[39px] rounded-lg bg-white text-[20px] leading-[30px] mt-[18px] text-[#F76300]"
+                            type="submit" value="Submit">
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-full flex justify-center items-center mt-[29px]">
+        <p class="font-[poppins] font-normal text-base align-center text-white">Copyright@neeca.com.pk</p>
+    </div>    
+    <!-- ------- Footer ends ---------- -->
+
+
+
+
+
+
+
+
+
+     <!-- Main modal log in-->
+<div id="popup-modallogin" tabindex="-1" aria-hidden="true" class="flex justify-center hidden fixed top-0 right-0 z-50 w-full h-modal md:h-full">
+    <div class="relative p-4 w-full h-full md:h-auto md:w-[700px] lg:w-[975px] xl:w-[1047px]">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="font-Poppins lg:flex">
+                <div class="w-full flex flex-col items-center bg-[#F76300]">
+                    <div
+                        class="w-[88%] flex justify-between lg:justify-center items-center mt-3.5 lg:mt-20 text-white text-4xl leading-[54px] font-extrabold">
+                        <h3>LOGIN</h3>
+                        <span class="flex lg:hidden">
+                            <svg width="21" height="33" viewBox="0 0 21 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M16.9106 0.80957L0.666687 17.0551L16.5074 32.8967L20.5016 28.9033L8.65264 17.0551L20.9048 4.80295L16.9106 0.80957Z"
+                                    fill="white" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="flex mt-4 mb-8">
+                        <img src="./Pictures/img.png" alt="image" />
+                    </div>
+                    <div class="hidden lg:flex flex-col text-white text-[28px] leading-[42px] mt-[106px] mb-5">
+                        <p>Don't Have Account?</p>
+                        <button
+                            class="text-[#F76300] bg-white text-2xl leading-[46px] rounded-full px-[63px] mt-6" onClick="myPopUpsignin()">Signup</button>
+                    </div>
+                </div>
+        
+                <div class="w-full flex justify-center text-xl leading-[30px] relative bg-white">
+                    <span class="hidden lg:flex absolute right-1.5 top-1" onclick="cancelPopupLogin()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.91272 6.11865L17.67 17.876" stroke="#F76300" stroke-width="5" stroke-linecap="round" />
+                            <path d="M17.67 6.11865L5.91268 17.876" stroke="#F76300" stroke-width="5" stroke-linecap="round" />
+                        </svg>
+                    </span>
+                    <div class="w-[88%] lg:w-[72%] flex flex-col mt-9 mb-7">
+        
+                        <span class="hidden lg:flex justify-center">
+                            <svg width="129" height="128" viewBox="0 0 129 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g filter="url(#filter0_d_12_4020)">
+                                    <path
+                                        d="M64.3615 3.24072C75.7896 3.24072 86.961 6.62954 96.4631 12.9786C105.965 19.3277 113.371 28.352 117.745 38.9101C122.118 49.4683 123.262 61.0862 121.033 72.2947C118.803 83.5032 113.3 93.7989 105.219 101.88C97.1382 109.961 86.8426 115.464 75.6341 117.693C64.4256 119.923 52.8077 118.779 42.2495 114.405C31.6913 110.032 22.6671 102.626 16.318 93.1237C9.9689 83.6217 6.58008 72.4502 6.58008 61.0221C6.58008 45.6975 12.6677 31.0006 23.5039 20.1645C34.34 9.32839 49.0369 3.24072 64.3615 3.24072V3.24072Z"
+                                        fill="#F76300" />
+                                </g>
+                                <path
+                                    d="M88.3033 86.1982H40.426C39.5505 86.1975 38.711 85.8493 38.0919 85.2302C37.4728 84.6111 37.1246 83.7717 37.1239 82.8962V54.0054C37.1248 53.13 37.473 52.2906 38.0921 51.6716C38.7111 51.0525 39.5505 50.7043 40.426 50.7034H88.3033C89.1787 50.7043 90.0181 51.0525 90.6372 51.6716C91.2562 52.2906 91.6044 53.13 91.6053 54.0054V82.8962C91.6046 83.7717 91.2564 84.6111 90.6373 85.2302C90.0182 85.8493 89.1788 86.1975 88.3033 86.1982ZM40.4274 54.0054V82.8962H88.3033V54.0054H40.4274Z"
+                                    fill="white" />
+                                <path
+                                    d="M79.2222 54.0054H49.5063V40.7985C49.5063 31.2328 55.7551 24.2896 64.3643 24.2896C72.9734 24.2896 79.2222 31.2321 79.2222 40.7985V54.0054ZM52.8077 50.7033H75.9201V40.7985C75.9201 33.0223 71.1684 27.5916 64.3636 27.5916C57.5588 27.5916 52.807 33.023 52.807 40.7985L52.8077 50.7033Z"
+                                    fill="white" />
+                                <path
+                                    d="M64.3651 70.9276C66.1888 70.9276 67.6671 69.4493 67.6671 67.6256C67.6671 65.8019 66.1888 64.3235 64.3651 64.3235C62.5414 64.3235 61.063 65.8019 61.063 67.6256C61.063 69.4493 62.5414 70.9276 64.3651 70.9276Z"
+                                    fill="white" />
+                                <defs>
+                                    <filter id="filter0_d_12_4020" x="0.580078" y="0.240723" width="127.563" height="127.563"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                        <feOffset dy="3" />
+                                        <feGaussianBlur stdDeviation="3" />
+                                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.161 0" />
+                                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_12_4020" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_12_4020"
+                                            result="shape" />
+                                    </filter>
+                                </defs>
+                            </svg>
+                        </span>
+        
+                        <label id="email" class="mt-7">Email</label>
+                        <input type="text" for="email" class="border-2 border-[#F76300] rounded">
+        
+                        <label id="pwd" class="mt-9">Password</label>
+                        <input type="password" for="pwd" class="border-2 border-[#F76300] rounded">
+        
+                        <div class="flex items-start mt-9">
+                            <input type="radio" id="radio-btn" class="mt-2 accent-[#F76300] w-[26px] h-[20px]">
+                            <label for="radio-btn" class="ml-5">I am agree to the <span class="text-[#F76300] font-bold">Terms &
+                                    Conditions</span></label>
+                        </div>
+        
+                        <div class="lg:hidden flex justify-center mt-8">
+                            <button class="text-white bg-[#F76300] text-2xl leading-9 px-[38px] rounded-lg">Login</button>
+                        </div>
+        
+                        <div class="w-full flex justify-center mt-8">
+                            <div class="w-full flex justify-between lg:justify-end">
+                                <p class="leading-5 lg:hidden">Don't Have Account?</p>
+                                <button
+                                    class="lg:hidden bg-[rgba(247,99,0,0.3)] text-[#F76300] text-2xl leading-9 px-10 rounded-lg">Signup</button>
+                                <button
+                                    class="hidden lg:flex text-white bg-[#F76300] text-2xl leading-[46px] rounded-full px-[63px] mt-5">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>
+
+<!-- login modal ends -->
+
+
+<!-- sign modal starts -->
+<div id="popup-modalsignin" tabindex="-1" aria-hidden="true" class="flex justify-center hidden fixed top-0 right-0 z-50 w-full h-modal md:h-full">
+    <div class="relative p-4 w-full h-full md:h-auto md:w-[700px] lg:w-[975px] xl:w-[1047px]">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="font-Poppins lg:flex h-[665px]">
+                <div class="w-full flex flex-col items-center bg-[#F76300]">
+                    <div
+                        class="w-[88%] flex justify-between lg:justify-center items-center mt-3.5 lg:mt-20 text-white text-4xl leading-[54px] font-extrabold">
+                        <h3>Signup</h3>
+                        <span class="flex lg:hidden">
+                            <svg width="21" height="33" viewBox="0 0 21 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M16.9106 0.80957L0.666687 17.0551L16.5074 32.8967L20.5016 28.9033L8.65264 17.0551L20.9048 4.80295L16.9106 0.80957Z"
+                                    fill="white" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="flex mt-4 mb-8">
+                        <img src="./Pictures/img.png" alt="image" />
+                    </div>
+                    <div class="hidden lg:flex flex-col text-white text-[28px] leading-[42px] mt-[106px] mb-5">
+                        <p>Already Have Account?</p>
+                        <button
+                            class="text-[#F76300] bg-white text-2xl leading-[46px] rounded-full px-[63px] mt-6" onClick="backLogin()">Login</button>
+                    </div>
+                </div>
+        
+                <div class="bg-white w-full flex justify-center text-xl leading-[30px] relative">
+                    <span class="hidden lg:flex absolute right-1.5 top-1" onClick="cancelPopupSignin()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.91272 6.11865L17.67 17.876" stroke="#F76300" stroke-width="5" stroke-linecap="round" />
+                            <path d="M17.67 6.11865L5.91268 17.876" stroke="#F76300" stroke-width="5" stroke-linecap="round" />
+                        </svg>
+                    </span>
+                    <div class="w-[88%] lg:w-[72%] flex flex-col mt-9 mb-7">
+        
+                        <span class="hidden lg:flex justify-center">
+                            <svg width="129" height="128" viewBox="0 0 129 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g filter="url(#filter0_d_12_4020)">
+                                    <path
+                                        d="M64.3615 3.24072C75.7896 3.24072 86.961 6.62954 96.4631 12.9786C105.965 19.3277 113.371 28.352 117.745 38.9101C122.118 49.4683 123.262 61.0862 121.033 72.2947C118.803 83.5032 113.3 93.7989 105.219 101.88C97.1382 109.961 86.8426 115.464 75.6341 117.693C64.4256 119.923 52.8077 118.779 42.2495 114.405C31.6913 110.032 22.6671 102.626 16.318 93.1237C9.9689 83.6217 6.58008 72.4502 6.58008 61.0221C6.58008 45.6975 12.6677 31.0006 23.5039 20.1645C34.34 9.32839 49.0369 3.24072 64.3615 3.24072V3.24072Z"
+                                        fill="#F76300" />
+                                </g>
+                                <path
+                                    d="M88.3033 86.1982H40.426C39.5505 86.1975 38.711 85.8493 38.0919 85.2302C37.4728 84.6111 37.1246 83.7717 37.1239 82.8962V54.0054C37.1248 53.13 37.473 52.2906 38.0921 51.6716C38.7111 51.0525 39.5505 50.7043 40.426 50.7034H88.3033C89.1787 50.7043 90.0181 51.0525 90.6372 51.6716C91.2562 52.2906 91.6044 53.13 91.6053 54.0054V82.8962C91.6046 83.7717 91.2564 84.6111 90.6373 85.2302C90.0182 85.8493 89.1788 86.1975 88.3033 86.1982ZM40.4274 54.0054V82.8962H88.3033V54.0054H40.4274Z"
+                                    fill="white" />
+                                <path
+                                    d="M79.2222 54.0054H49.5063V40.7985C49.5063 31.2328 55.7551 24.2896 64.3643 24.2896C72.9734 24.2896 79.2222 31.2321 79.2222 40.7985V54.0054ZM52.8077 50.7033H75.9201V40.7985C75.9201 33.0223 71.1684 27.5916 64.3636 27.5916C57.5588 27.5916 52.807 33.023 52.807 40.7985L52.8077 50.7033Z"
+                                    fill="white" />
+                                <path
+                                    d="M64.3651 70.9276C66.1888 70.9276 67.6671 69.4493 67.6671 67.6256C67.6671 65.8019 66.1888 64.3235 64.3651 64.3235C62.5414 64.3235 61.063 65.8019 61.063 67.6256C61.063 69.4493 62.5414 70.9276 64.3651 70.9276Z"
+                                    fill="white" />
+                                <defs>
+                                    <filter id="filter0_d_12_4020" x="0.580078" y="0.240723" width="127.563" height="127.563"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                        <feOffset dy="3" />
+                                        <feGaussianBlur stdDeviation="3" />
+                                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.161 0" />
+                                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_12_4020" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_12_4020"
+                                            result="shape" />
+                                    </filter>
+                                </defs>
+                            </svg>
+                        </span>
+        
+                        <label id="email" class="mt-7">Email</label>
+                        <input type="text" for="email" class="border-2 border-[#F76300] rounded">
+        
+                        <label id="pwd" class="mt-9">Password</label>
+                        <input type="password" for="pwd" class="border-2 border-[#F76300] rounded">
+        
+                        <label id="cpwd" class="mt-9">Confirm Password</label>
+                        <input type="password" for="cpwd" class="border-2 border-[#F76300] rounded">
+        
+                        <div class="flex items-start mt-9">
+                            <input type="radio" id="radio-btn" class="mt-2 accent-[#F76300] w-[26px] h-[20px]">
+                            <label for="radio-btn" class="ml-5">I am agree to the <span class="text-[#F76300] font-bold">Terms &
+                                    Conditions</span></label>
+                        </div>
+        
+                        <div class="lg:hidden flex justify-center mt-8">
+                            <button
+                                class="text-[#F76300] bg-[rgba(247,99,0,0.3)] text-2xl leading-9 px-[38px] rounded-lg">Signup</button>
+                        </div>
+        
+                        <div class="w-full flex justify-center mt-8">
+                            <div class="w-full flex justify-between lg:justify-end">
+                                <p class="leading-5 lg:hidden">Already Have Account?</p>
+                                <button
+                                    class="lg:hidden bg-[#F76300] text-white text-2xl leading-9 px-12 rounded-lg" onClick="backLogin()">Login</button>
+                                <button
+                                    class="hidden lg:flex text-white bg-[#F76300] text-2xl leading-[46px] rounded-full px-[63px] mt-5">Signup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>
+
+<!-- sign modal ends -->
+
+
+    <script src="./Scripts/index.js"></script>
+</body>
+
+</html>
